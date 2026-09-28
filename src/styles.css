@@ -1,0 +1,310 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Divyam Foundation design system.
+ * Warm earthen palette: marigold, deep terracotta, forest green, cream paper.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-leaf: var(--leaf);
+  --color-leaf-foreground: var(--leaf-foreground);
+  --color-sand: var(--sand);
+  --font-display: "Fraunces", Georgia, serif;
+  --font-sans: "Karla", ui-sans-serif, system-ui, sans-serif;
+  --shadow-warm: 0 18px 40px -22px oklch(0.35 0.1 55 / 0.45);
+  --shadow-lift: 0 26px 60px -30px oklch(0.35 0.1 55 / 0.55);
+}
+
+:root {
+  --radius: 1rem;
+  --background: oklch(0.985 0.014 85);
+  --foreground: oklch(0.24 0.04 45);
+  --card: oklch(1 0.006 85);
+  --card-foreground: oklch(0.24 0.04 45);
+  --popover: oklch(1 0.006 85);
+  --popover-foreground: oklch(0.24 0.04 45);
+  --primary: oklch(0.55 0.17 42);
+  --primary-foreground: oklch(0.99 0.01 85);
+  --secondary: oklch(0.94 0.04 85);
+  --secondary-foreground: oklch(0.32 0.06 45);
+  --muted: oklch(0.95 0.02 85);
+  --muted-foreground: oklch(0.5 0.03 55);
+  --accent: oklch(0.82 0.15 78);
+  --accent-foreground: oklch(0.26 0.06 45);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.99 0.01 85);
+  --border: oklch(0.9 0.025 78);
+  --input: oklch(0.9 0.025 78);
+  --ring: oklch(0.55 0.17 42);
+  --leaf: oklch(0.45 0.09 155);
+  --leaf-foreground: oklch(0.98 0.01 85);
+  --sand: oklch(0.96 0.03 82);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+}
+
+/* ---------- Design system utilities ---------- */
+
+@utility container-page {
+  width: 100%;
+  margin-inline: auto;
+  max-width: 76rem;
+  padding-inline: 1.25rem;
+}
+
+@utility btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  background: linear-gradient(
+    100deg,
+    var(--color-primary),
+    oklch(0.63 0.16 62)
+  );
+  color: var(--color-primary-foreground);
+  padding: 0.8rem 1.6rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+  box-shadow: var(--shadow-warm);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lift);
+  }
+}
+
+@utility btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  border: 1.5px solid var(--color-primary);
+  color: var(--color-primary);
+  padding: 0.8rem 1.6rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+  transition: background 0.25s ease, color 0.25s ease;
+  &:hover {
+    background: var(--color-primary);
+    color: var(--color-primary-foreground);
+  }
+}
+
+@utility card-warm {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-warm);
+}
+
+@utility eyebrow {
+  display: inline-block;
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+@utility section-pad {
+  padding-block: 4.5rem;
+}
+
+@utility paper-grain {
+  background-image: radial-gradient(
+      oklch(0.55 0.17 42 / 0.06) 1px,
+      transparent 1px
+    );
+  background-size: 18px 18px;
+}
+
+/* ---------- Animations ---------- */
+
+@keyframes riseIn {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes drawUnderline {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes floatSlow {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes veilOut {
+  0% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@utility animate-rise {
+  animation: riseIn 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+@utility animate-fade {
+  animation: fadeIn 1s ease both;
+}
+
+@utility animate-underline {
+  transform-origin: left;
+  animation: drawUnderline 0.9s 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+@utility animate-float {
+  animation: floatSlow 7s ease-in-out infinite;
+}
+
+@utility welcome-veil {
+  animation: veilOut 4.4s ease forwards;
+}
+
+@keyframes logoBloom {
+  0% {
+    clip-path: circle(0% at 50% 82%);
+    transform: scale(0.86) rotate(-4deg);
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  100% {
+    clip-path: circle(95% at 50% 82%);
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes logoGlow {
+  0% {
+    opacity: 0;
+    transform: scale(0.4);
+  }
+  45% {
+    opacity: 0.55;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.6);
+  }
+}
+
+@keyframes shineSweep {
+  0% {
+    transform: translateX(-120%) skewX(-18deg);
+    opacity: 0;
+  }
+  35% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateX(160%) skewX(-18deg);
+    opacity: 0;
+  }
+}
+
+@utility animate-logo-bloom {
+  animation: logoBloom 1.9s cubic-bezier(0.16, 0.84, 0.24, 1) both;
+}
+
+@utility animate-logo-glow {
+  animation: logoGlow 2.2s ease-out both;
+}
+
+@utility animate-shine {
+  animation: shineSweep 1.4s 1.5s ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001s !important;
+    animation-delay: 0s !important;
+  }
+}
