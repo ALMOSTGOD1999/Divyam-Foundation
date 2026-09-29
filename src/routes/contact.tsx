@@ -15,7 +15,8 @@ export const Route = createFileRoute("/contact")({
       { property: "og:title", content: "Contact & Donate — Divyam Foundation" },
       {
         property: "og:description",
-        content: "Call, write or visit us in Berhampore, Murshidabad. Volunteer, enrol a child or donate.",
+        content:
+          "Call, write or visit us in Berhampore, Murshidabad. Volunteer, enrol a child or donate.",
       },
     ],
   }),
@@ -42,8 +43,8 @@ function Contact() {
                 <div>
                   <h3 className="text-lg">Thank you — message noted</h3>
                   <p className="mt-1 text-sm text-muted-foreground">
-                    Our team replies within two working days. For anything urgent, please call
-                    +91 98765 43210.
+                    Our team replies within two working days. For anything urgent, please call +91
+                    98765 43210.
                   </p>
                 </div>
               </div>
@@ -175,6 +176,38 @@ function Contact() {
               </p>
             </div>
           </div>
+        </div>
+
+        <div className="mt-14">
+          <div className="flex flex-wrap items-end justify-between gap-4">
+            <div>
+              <p className="eyebrow">Find us</p>
+              <h2 className="mt-1 text-3xl">Where we are</h2>
+            </div>
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=Vairabtala,+Khagra,+Berhampore,+Murshidabad+742103,+West+Bengal"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-ghost"
+            >
+              <MapPin className="size-4" />
+              Get directions
+            </a>
+          </div>
+          <div className="card-warm mt-6 overflow-hidden p-0">
+            <iframe
+              title="Map — Divyam Foundation, Vairabtala, Khagra, Berhampore"
+              src="https://www.google.com/maps?q=Vairabtala,+Khagra,+Berhampore,+Murshidabad+742103,+West+Bengal&z=15&output=embed"
+              className="block h-[420px] w-full border-0"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              allowFullScreen
+            />
+          </div>
+          <p className="mt-3 text-xs text-muted-foreground">
+            Pin shows Vairabtala, Khagra — our campus in Berhampore, Murshidabad. Auto-rickshaws
+            from Berhampore court reach Khagra in about ten minutes.
+          </p>
         </div>
       </section>
     </>
