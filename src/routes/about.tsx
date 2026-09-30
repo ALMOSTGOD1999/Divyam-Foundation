@@ -3,9 +3,7 @@ import { PageHero } from "@/components/PageHero";
 import { Mail } from "lucide-react";
 import t1 from "@/assets/team-1.jpg";
 import t2 from "@/assets/team-2.jpg";
-import t3 from "@/assets/team-3.jpg";
 import t4 from "@/assets/team-4.jpg";
-import t5 from "@/assets/team-5.jpg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -14,7 +12,7 @@ export const Route = createFileRoute("/about")({
       {
         name: "description",
         content:
-          "Our story since 2014, our values, and the five people who lead Divyam Foundation's education, livelihood and health work in Berhampore.",
+          "Our story since 2014, our values, and the three people who lead Divyam Foundation's education, livelihood and health work in Berhampore.",
       },
       { property: "og:title", content: "About Us & Our Team — Divyam Foundation" },
       {
@@ -28,57 +26,50 @@ export const Route = createFileRoute("/about")({
 
 const team = [
   {
-    name: "Rajendra Mishra",
+    name: "Luna Sarkar",
     role: "Founder & Managing Trustee",
-    photo: t1,
-    email: "rajendra@divyamfoundation.org",
-    bio: "A retired schoolteacher from Khagra, Rajendra started Divyam in 2014 with one evening class of 14 children on his own terrace. He leads governance, land and partnership work.",
+    photo: t2,
+    email: "luna@divyamfoundation.org",
+    bio: "A retired schoolteacher from Khagra, Luna started Divyam in 2014 with one evening class of 14 children on her own terrace. She leads governance, land and partnership work.",
     tags: ["Governance", "Community outreach"],
   },
   {
-    name: "Sunita Verma",
+    name: "Gargi Sarkar",
     role: "Director — Programs",
-    photo: t2,
-    email: "sunita@divyamfoundation.org",
-    bio: "A development professional with 18 years in child rights, Sunita designs our education and livelihood programs and holds the team to measurable outcomes for every cohort.",
+    photo: t4,
+    email: "gargi@divyamfoundation.org",
+    bio: "A development professional with 18 years in child rights, Gargi designs our education and livelihood programs and holds the team to measurable outcomes for every cohort.",
     tags: ["Program design", "Monitoring"],
   },
   {
-    name: "Aman Khanna",
+    name: "Sibajyoti Bhowmick",
     role: "Head — Operations & Finance",
-    photo: t3,
-    email: "aman@divyamfoundation.org",
-    bio: "A chartered accountant who left corporate audit to run our books, Aman manages compliance, 80G reporting and the transparent annual public accounts.",
+    photo: t1,
+    email: "sibajyoti@divyamfoundation.org",
+    bio: "A chartered accountant who left corporate audit to run our books, Sibajyoti manages compliance, 80G reporting and the transparent annual public accounts.",
     tags: ["Finance", "Compliance"],
-  },
-  {
-    name: "Dr. Neha Tripathi",
-    role: "Principal — Divyam Gurukul",
-    photo: t4,
-    email: "neha@divyamfoundation.org",
-    bio: "With a doctorate in early childhood education, Neha built the Gurukul's play-based curriculum and trains all our pre-school teachers and Anganwadi partners.",
-    tags: ["Early childhood", "Teacher training"],
-  },
-  {
-    name: "Kamla Devi",
-    role: "Community Coordinator",
-    photo: t5,
-    email: "kamla@divyamfoundation.org",
-    bio: "A founding self-help-group member, Kamla is the bridge between Divyam and 36 villages — enrolling children, counselling parents and mentoring 40 women entrepreneurs.",
-    tags: ["Field work", "Women's groups"],
   },
 ];
 
 const values = [
-  { title: "Dignity first", text: "Families are partners, never beneficiaries. Nothing is designed without them in the room." },
-  { title: "Radical transparency", text: "Every rupee is published in our annual report; donors get project-level updates." },
+  {
+    title: "Dignity first",
+    text: "Families are partners, never beneficiaries. Nothing is designed without them in the room.",
+  },
+  {
+    title: "Radical transparency",
+    text: "Every rupee is published in our annual report; donors get project-level updates.",
+  },
   { title: "Local hands", text: "Nine in ten of our staff live in the communities they serve." },
 ];
 
 const timeline = [
   { year: "2014", text: "Founded with one evening class of 14 children on a terrace in Khagra." },
   { year: "2017", text: "Divyam Gurukul pre-school opens in Khagra, Berhampore." },
-  { year: "2020", text: "Ration and tele-learning drive reaches 2,300 families through the pandemic." },
+  {
+    year: "2020",
+    text: "Ration and tele-learning drive reaches 2,300 families through the pandemic.",
+  },
   { year: "2023", text: "Women's livelihood centre and 12 new learning centres launched." },
   { year: "2026", text: "4,800+ children taught; second Gurukul campus under construction." },
 ];
@@ -86,9 +77,12 @@ const timeline = [
 function About() {
   return (
     <>
-      <PageHero eyebrow="About Divyam Foundation" title="A terrace class in 2014. Thirty-six villages today.">
-        We are a registered non-profit in Berhampore working so that a child's postcode never decides
-        their future — through education, women's livelihoods and community health.
+      <PageHero
+        eyebrow="About Divyam Foundation"
+        title="A terrace class in 2014. Thirty-six villages today."
+      >
+        We are a registered non-profit in Berhampore working so that a child's postcode never
+        decides their future — through education, women's livelihoods and community health.
       </PageHero>
 
       <section className="section-pad">
