@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { HeartHandshake, GraduationCap, Stethoscope, Sprout, ArrowRight } from "lucide-react";
 import heroImg from "@/assets/hero.jpg";
 import gurukulImg from "@/assets/gurukul.jpg";
-import logo from "@/assets/divyam-logo.png.asset.json";
+import logo from "@/assets/divyam-logo.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -39,7 +39,7 @@ function WelcomeVeil() {
         <span className="absolute size-56 rounded-full bg-accent/40 blur-3xl animate-logo-glow" />
         <div className="relative overflow-hidden">
           <img
-            src={logo.url}
+            src={logo}
             alt="Divyam Foundation logo"
             className="w-64 max-w-[70vw] mix-blend-multiply animate-logo-bloom sm:w-80"
           />
@@ -52,7 +52,10 @@ function WelcomeVeil() {
       >
         Seva · Shiksha · Sanskar
       </p>
-      <span className="h-0.5 w-40 rounded-full bg-accent animate-underline" style={{ animationDelay: "2.1s" }} />
+      <span
+        className="h-0.5 w-40 rounded-full bg-accent animate-underline"
+        style={{ animationDelay: "2.1s" }}
+      />
     </div>
   );
 }
@@ -108,8 +111,8 @@ function Home() {
               style={{ animationDelay: "0.2s" }}
             >
               Divyam Foundation works with families in underserved neighbourhoods and villages —
-              teaching children, training women and caring for the community. Our pre-school,
-              Divyam Gurukul, is where many of these journeys begin.
+              teaching children, training women and caring for the community. Our pre-school, Divyam
+              Gurukul, is where many of these journeys begin.
             </p>
             <div
               className="mt-8 flex flex-wrap gap-3 animate-rise"
@@ -192,8 +195,8 @@ function Home() {
             <h2 className="mt-3 text-3xl md:text-4xl">Divyam Gurukul</h2>
             <p className="mt-4 text-muted-foreground">
               A joyful, play-based pre-school for children aged 2 to 6. Small groups, trained
-              teachers, Hindi and English readiness, and a curriculum rooted in stories, songs,
-              art and free play. Fees are on a sliding scale — no child is turned away.
+              teachers, Hindi and English readiness, and a curriculum rooted in stories, songs, art
+              and free play. Fees are on a sliding scale — no child is turned away.
             </p>
             <ul className="mt-5 space-y-2 text-sm text-muted-foreground">
               <li>• Playgroup, Nursery, LKG and UKG batches</li>

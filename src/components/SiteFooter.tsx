@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Facebook, Mail, MapPin, Phone } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
-import logo from "@/assets/divyam-logo.png.asset.json";
+import logo from "@/assets/divyam-logo.png";
 
 const CREDIT_TEXT = "crafted by Incodent";
 
@@ -72,11 +72,7 @@ export function SiteFooter() {
     <footer className="mt-8 border-t border-border bg-sand paper-grain">
       <div className="container-page grid gap-10 py-14 md:grid-cols-3">
         <div>
-          <img
-            src={logo.url}
-            alt="Divyam Foundation logo"
-            className="h-20 w-auto mix-blend-multiply"
-          />
+          <img src={logo} alt="Divyam Foundation logo" className="h-20 w-auto mix-blend-multiply" />
           <p className="mt-4 max-w-sm text-sm text-muted-foreground">
             A registered non-profit working since 2014 on early childhood education, women's
             livelihoods and community health in and around Berhampore, Murshidabad, West Bengal.

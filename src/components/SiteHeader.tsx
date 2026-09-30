@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import logo from "@/assets/divyam-logo.png.asset.json";
+import logo from "@/assets/divyam-logo.png";
 
 const links = [
   { to: "/", label: "Home" },
@@ -19,7 +19,7 @@ export function SiteHeader() {
       <div className="container-page flex h-18 items-center justify-between py-3">
         <Link to="/" className="flex items-center gap-3">
           <img
-            src={logo.url}
+            src={logo}
             alt="Divyam Foundation logo"
             className="h-16 w-auto mix-blend-multiply md:h-[4.5rem]"
           />
@@ -51,7 +51,6 @@ export function SiteHeader() {
             Donate
           </Link>
         </nav>
-
 
         <button
           aria-label="Toggle menu"
